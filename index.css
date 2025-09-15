@@ -1,0 +1,235 @@
+
+/* ===== Root Variables ===== */
+:root {
+  --primary-color: #610008;
+  --secondary-color: #ffffff;
+  --accent-color: silver;
+  --bg-color: #330001;
+  --font-main: "Tahoma", sans-serif;
+}
+
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+body {
+  background: url("IMG-20250915-WA0000.jpg") center/cover no-repeat fixed;
+  color: #fff;
+  text-align: center;
+}
+
+/* ===== Header ===== */
+header {
+  background: rgba(48, 4, 4, 0.9);
+  color: var(--secondary-color);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .logo {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+header nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  color: var(--accent-color);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color: black;
+  padding: 12px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background: var(--secondary-color);
+  color: black;
+}
+
+/* ===== Gallery Section ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 50px 20px;
+}
+
+.gallery .card {
+  background: rgba(97, 1, 1, 0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.gallery .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.gallery img {
+  width: 100%;
+  display: block;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--accent-color);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  border-color: var(--primary-color);
+}
+
+.gallery h3 {
+  margin: 15px 0 10px;
+  color: #ffffff;
+}
+
+.gallery p {
+  margin-bottom: 15px;
+  color: #f3eeee;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: rgba(48, 4, 4, 0.9);
+  color: var(--secondary-color);
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.footer-section p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.footer-section a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section a:hover {
+  color: var(--accent-color);
+}
+
+/* ===== Social Icons ===== */
+.social-icons {
+  margin-top: 15px;
+}
+
+/* أيقونات SVG أو IMG */
+.social-icons a img.social-icon,
+.social-icons a svg.social-icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 8px;
+  transition: transform 0.3s, filter 0.3s, fill 0.3s;
+}
+
+/* hover لأي أيقونة img */
+.social-icons a img.social-icon:hover {
+  transform: scale(1.3);
+  filter: brightness(0.8) invert(0.6);
+}
+
+/* hover لأي أيقونة svg */
+.social-icons a svg.social-icon:hover {
+  transform: scale(1.3);
+  fill: var(--accent-color);
+}
+
+/* ===== Footer Bottom ===== */
+footer .copy {
+  border-top: 1px solid var(--accent-color);
+  padding-top: 10px;
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
+
+/* ===== Responsive ===== */
+@media(max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media(max-width: 480px) {
+  .social-icons a {
+    font-size: 1.3rem;
+    margin: 0 5px;
+  }
+
+  .social-icons a img.social-icon,
+  .social-icons a svg.social-icon {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+  }
+}
